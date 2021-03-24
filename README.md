@@ -6,16 +6,20 @@ Tested with Vue 2.6.12 + Laravel 8.
 
 ### Client-side installation
 
+The only dependency for this POC to work is [vue-portal](https://github.com/LinusBorg/portal-vue).
+
 In your main JavaScript file, register the `Modalable` and `ToModal` components:
 
 ```javascript
 import Vue from "vue";
-import ToModal from "@/Modal/ToModal";
 import Modalable from "@/Modal/Modalable";
+import ToModal from "@/Modal/ToModal";
+import PortalVue from "portal-vue";
 
+Vue.use(PortalVue)
 Vue.component("Modalable", Modalable);
 Vue.component("ToModal", ToModal);
-```vue
+```
 
 In your root layout, you need to add the `ComponentModal` as the last component of your template:
 
@@ -112,7 +116,7 @@ export default {
 </script>
 ```
 
-In most cases, the `/user/create` endpoint renders a form that's wrapped into a template, maybe with some additional components and components to style the form within your template. Here's a simple example of what the `UserCreate.vue` component might look like:
+In most cases, the `/user/create` endpoint renders a form that's wrapped into a template, maybe with other components and components to style the form within your template. Here's a simple example of what the `UserCreate.vue` component might look like:
 
 ```vue
 <template>
@@ -121,15 +125,9 @@ In most cases, the `/user/create` endpoint renders a form that's wrapped into a 
     <!-- form-panel provides a nice padding with padding and shadow -->
     <form-panel>
       <form @submit.prevent="form.post('/login')">
-        <!-- name -->
         <input type="text" v-model="form.name">
-        <div v-if="form.errors.name">{{ form.errors.name }}</div>
-
-        <!-- email -->
         <input type="email" v-model="form.email">
-        <div v-if="form.errors.email">{{ form.errors.email }}</div>
 
-        <!-- submit -->
         <button type="submit" :disabled="form.processing">Login</button>
       </form>
     </form-panel>
@@ -177,7 +175,7 @@ The last step is to move the `form` out of the `app-layout` by using the `ToModa
 
         <!-- submit -->
         <button type="submit" :disabled="form.processing">Login</button>
-        </form>
+      </form>
     </template>
   </Modalable>
 </template>
@@ -199,3 +197,6 @@ export default {
 };
 </script>
 ```
+
+### Handling redirects
+
