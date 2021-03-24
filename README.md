@@ -155,13 +155,13 @@ export default {
 </script>
 ```
 
-To load this form into a modal, we don't want the sidear, footer and styling form the `form-panel` component. We want just the `form` itself!
+To load this form into a modal, we don't want the sidebar, footer, and styling from the `form-panel` component. We want just the `form` itself!
 
 To accomplish this, you need to do three things:
 
 1. Add the `IsModalable` mixin to your component.
 2. Wrap your *whole* component into the `Modalable` component.
-3. Move the `form` to a seperate `#toModal` template and replace it with a `ToModal` component.
+3. Move the `form` to a separate `#toModal` template and replace it with a `ToModal` component.
 
 ```vue
 <template>
@@ -215,7 +215,7 @@ Now when you visit `/user/create`, nothing has changed! You still have your layo
 
 ### Handling redirects
 
-By default, redirects are handled as any other Inertia request. For example: you're visiting `/user`, you open `/user/create` in a modal, and after a successful submit, you redirect the user to the detail page of the newly created user:
+By default, redirects are handled as any other Inertia request. For example you're visiting `/user`, you open `/user/create` in a modal, and after a successful submit, you redirect the user to the detail page of the newly created user:
 
 ```php
 public function store(UserStoreRequest $request)
@@ -228,7 +228,7 @@ public function store(UserStoreRequest $request)
 
 You might not always want to route to the detail page. Luckily, you don't have to update your server-side implementation.
 
-The `visitInModal` method accepts a second argument, that can either a Boolean or a callback. Instead of redirecting the user, the user stays on the same page and you can manually handle the event with the callback. This callback is executed after a succesful request, for example when the new user is stored in the database.
+The `visitInModal` method accepts a second argument that can either a Boolean or a callback. Instead of redirecting the user, the user stays on the same page, and you can manually handle the event with the callback. This callback is executed after a successful request, for example, when the new user is stored in the database.
 
 ```javascript
 this.$inertia.visitInModal('/user/create', (event) => {
