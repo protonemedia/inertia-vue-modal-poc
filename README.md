@@ -131,11 +131,11 @@ In most cases, the `/user/create` endpoint renders a form that's wrapped into a 
   <app-layout>
     <!-- form-panel provides a nice padding with padding and shadow -->
     <form-panel>
-      <form @submit.prevent="form.post('/login')">
+      <form @submit.prevent="form.post('/user/store')">
         <input type="text" v-model="form.name">
         <input type="email" v-model="form.email">
 
-        <button type="submit" :disabled="form.processing">Login</button>
+        <button type="submit">Login</button>
       </form>
     </form-panel>
   </app-layout>
@@ -173,17 +173,12 @@ To accomplish this, you need to do three things:
     </app-layout>
 
     <template #toModal>
-      <form @submit.prevent="form.post('/login')">
-        <!-- name -->
+      <form @submit.prevent="form.post('/user.store')">
         <input type="text" v-model="form.name">
-        <div v-if="form.errors.name">{{ form.errors.name }}</div>
-
-        <!-- email -->
         <input type="email" v-model="form.email">
-        <div v-if="form.errors.email">{{ form.errors.email }}</div>
 
         <!-- submit -->
-        <button type="submit" :disabled="form.processing">Login</button>
+        <button type="submit">Login</button>
       </form>
     </template>
   </Modalable>
