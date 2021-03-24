@@ -165,19 +165,22 @@ To accomplish this, you need to do three things:
 
 ```vue
 <template>
+  <!-- the new Modalable root component -->
   <Modalable :is-modal="isModal">
+    <!-- the 'old' root component -->
     <app-layout>
       <form-panel>
+        <!-- the previous location of the form, replaced by the ToModal component -->
         <ToModal />
       </form-panel>
     </app-layout>
 
     <template #toModal>
+      <!-- the 'new' location of the form -->
       <form @submit.prevent="form.post('/user.store')">
         <input type="text" v-model="form.name">
         <input type="email" v-model="form.email">
 
-        <!-- submit -->
         <button type="submit">Login</button>
       </form>
     </template>
