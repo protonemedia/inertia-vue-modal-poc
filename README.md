@@ -217,5 +217,14 @@ public function store(UserStoreRequest $request)
 
     return redirect()->route('user.show', $user);
 }
+```
 
+You might not always want to route to the detail page. Luckily, you don't have to update your server-side implementation.
+
+The `visitInModal` method accepts a second argument, that can either a Boolean or a callback. Instead of redirecting the user, the user stays on the same page and you can manually handle the event with the callback. This callback is executed after a succesful request, for example when the new user is stored in the database.
+
+```javascript
+this.$inertia.visitInModal('/user/create', (event) => {
+  // do something
+});
 ```
