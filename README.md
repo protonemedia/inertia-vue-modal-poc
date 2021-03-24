@@ -2,6 +2,8 @@
 
 Tested with Vue 2.6.12 + Laravel 8.
 
+I've copied the default [Laravel Jetstream](https://jetstream.laravel.com/2.x/stacks/inertia.html) modal component for this demo.
+
 ## Installation
 
 ### Client-side installation
@@ -206,4 +208,14 @@ Now when you visit `/user/create`, nothing has changed! You still have your layo
 
 ### Handling redirects
 
-By default, redirects are handled as any other Inertia request.
+By default, redirects are handled as any other Inertia request. For example: you're visiting `/user`, you open `/user/create` in a modal, and after a successful submit, you redirect the user to the detail page of the newly created user:
+
+```php
+public function store(UserStoreRequest $request)
+{
+    $user = User::create(...);
+
+    return redirect()->route('user.show', $user);
+}
+
+```
