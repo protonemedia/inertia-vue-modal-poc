@@ -14,8 +14,7 @@ In your main JavaScript file, register the `Modalable` and `ToModal` components:
 
 ```javascript
 import Vue from "vue";
-import Modalable from "@/Modal/Modalable";
-import ToModal from "@/Modal/ToModal";
+import { Modalable, ToModal } from "@protonemedia/inertia-vue-modal-poc"
 import PortalVue from "portal-vue";
 
 Vue.component("Modalable", Modalable);
@@ -40,7 +39,7 @@ In your root layout, you need to add the `ComponentModal` as the last component 
 </template>
 
 <script>
-import ComponentModal from "@/Modal/ComponentModal";
+import { ComponentModal } from "@protonemedia/inertia-vue-modal-poc"
 
 export default {
   components: {
@@ -187,10 +186,14 @@ To accomplish this, you need to do three things:
 </template>
 
 <script>
-import IsModalable from "@/Modal/IsModalable";
+import { Modalable, IsModalable } from "@protonemedia/inertia-vue-modal-poc"
 
 export default {
   mixins: [IsModalable],
+
+  components: {
+    Modalable
+  },
 
   data() {
     return {
