@@ -16,9 +16,9 @@ import Modalable from "@/Modal/Modalable";
 import ToModal from "@/Modal/ToModal";
 import PortalVue from "portal-vue";
 
-Vue.use(PortalVue)
 Vue.component("Modalable", Modalable);
 Vue.component("ToModal", ToModal);
+Vue.use(PortalVue)
 ```
 
 In your root layout, you need to add the `ComponentModal` as the last component of your template:
@@ -53,7 +53,7 @@ export default {
 In your Laravel application, you only need to add a few lines of code to the `HandleInertiaRequests` middleware.
 
 1. Add the `handle` method to the `HandleInertiaRequests` middleware
-2. Add the `isModal` property to the shared data
+2. Add the `isModal` property to the shared data array
 
 ```php
 <?php
@@ -115,6 +115,8 @@ export default {
 };
 </script>
 ```
+
+### Update the page you want to load into a modal
 
 In most cases, the `/user/create` endpoint renders a form that's wrapped into a template, maybe with other components and components to style the form within your template. Here's a simple example of what the `UserCreate.vue` component might look like:
 
