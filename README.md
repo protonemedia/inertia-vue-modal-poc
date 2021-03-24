@@ -52,8 +52,8 @@ export default {
 
 In your Laravel application, you only need to add a few lines of code to the `HandleInertiaRequests` middleware.
 
-1. Add the `handle` method to the `HandleInertiaRequests` middleware
-2. Add the `isModal` property to the shared data array
+1. Add the `handle` method to the `HandleInertiaRequests` middleware.
+2. Add the `isModal` property to the shared data array.
 
 ```php
 <?php
@@ -118,7 +118,7 @@ export default {
 
 ### Update the page you want to load into a modal
 
-In most cases, the `/user/create` endpoint renders a form that's wrapped into a template, maybe with other components and components to style the form within your template. Here's a simple example of what the `UserCreate.vue` component might look like:
+In most cases, the `/user/create` endpoint renders a form that's wrapped into a template, maybe with other components and components to style the form. Here's a simple example of what the `UserCreate.vue` component might look like:
 
 ```vue
 <template>
@@ -152,9 +152,11 @@ export default {
 
 To load this form into a modal, we don't want the sidear, footer and styling form the `form-panel` component. We want just the `form` itself!
 
-To accomplish this, we need to wrap the whole template into the `Modalable` component. The `is-modal` prop value comes from the `IsModalable` mixin that we need to add as well.
+To accomplish this, you need to do three things:
 
-The last step is to move the `form` out of the `app-layout` by using the `ToModal` component and `#toModal` template. The template goes below the `app-layout` (but still in `Modalable`!) and holds the form itself. The contents of this template will be shown in the modal. In the `app-layout` we need to add a `ToModal` component at the original position of the form. This way, the form is still at the right place when we visit this route *without* loading it into a modal.
+1. Add the `IsModalable` mixin to your component.
+2. Wrap your *whole* component into the `Modalable` component.
+3. Move the `form` to a seperate `#toModal` template and replace it with a `ToModal` component.
 
 ```vue
 <template>
@@ -200,5 +202,8 @@ export default {
 </script>
 ```
 
+Now when you visit `/user/create`, nothing has changed! You still have your layout and `form-panel` styling. But when you load this component into a modal, it will only render the `form`.
+
 ### Handling redirects
 
+By default, redirects are handled as any other Inertia request.
