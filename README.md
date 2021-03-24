@@ -8,6 +8,10 @@ I've copied the default [Laravel Jetstream](https://jetstream.laravel.com/2.x/st
 
 ### Client-side installation
 
+```bash
+npm i @protonemedia/inertia-vue-modal-poc
+```
+
 The only dependency for this POC to work is [vue-portal](https://github.com/LinusBorg/portal-vue).
 
 In your main JavaScript file, register the `Modalable` and `ToModal` components:
