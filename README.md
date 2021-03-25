@@ -1,8 +1,15 @@
 # Inertia Vue Modal POC
 
-Tested with Vue 2.6.12 + Laravel 8.
-
 I've copied the default [Laravel Jetstream](https://jetstream.laravel.com/2.x/stacks/inertia.html) modal component for this demo.
+
+## Limitations
+
+This POC is a very early draft, so these limitations will probably be fixed soon.
+
+* No support for nested modals (modal in modal)
+* Only tested on Vue 2.6 + Laravel 8
+* No access to the parent from within the modal
+* No way to close the modal from the parent
 
 ## Installation
 
@@ -188,7 +195,7 @@ To accomplish this, you need to do three things:
 </template>
 
 <script>
-import { Modalable, IsModalable } from "@protonemedia/inertia-vue-modal-poc"
+import { IsModalable } from "@protonemedia/inertia-vue-modal-poc"
 
 export default {
   mixins: [IsModalable],
