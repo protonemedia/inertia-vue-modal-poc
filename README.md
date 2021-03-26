@@ -10,7 +10,7 @@ This POC is a very early draft, so these limitations will probably be fixed soon
 * Only tested on Vue 2.6 + Laravel 8
 * No access to the parent from within the modal
 * No way to close the modal from the parent
-* It doesnt't use browser history navigation
+* It doesn't use browser history navigation
 
 ## Installation
 
