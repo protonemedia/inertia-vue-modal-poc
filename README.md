@@ -10,6 +10,7 @@ This POC is a very early draft, so these limitations will probably be fixed soon
 * Only tested on Vue 2.6 + Laravel 8
 * No access to the parent from within the modal
 * No way to close the modal from the parent
+* It doesnt't use browser history navigation
 
 ## Installation
 
@@ -136,7 +137,7 @@ In most cases, the `/user/create` endpoint renders a form that's wrapped into a 
 <template>
   <!-- app-layout provides the sidebar navigation and footer -->
   <app-layout>
-    <!-- form-panel provides a nice padding with padding and shadow -->
+    <!-- form-panel provides a nice padding and shadow -->
     <form-panel>
       <form @submit.prevent="form.post('/user/store')">
         <input type="text" v-model="form.name">
