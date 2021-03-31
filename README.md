@@ -2,6 +2,10 @@
 
 I've copied the default [Laravel Jetstream](https://jetstream.laravel.com/2.x/stacks/inertia.html) modal component for this demo.
 
+## Blog post
+
+[Proof of Concept: Load any route into a modal with Inertia.js using Laravel and Vue.js](https://protone.media/en/blog/proof-of-concept-load-any-route-into-a-modal-with-inertiajs-using-laravel-and-vuejs)
+
 ## Limitations
 
 This POC is a very early draft, so these limitations will probably be fixed soon.
