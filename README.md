@@ -1,3 +1,5 @@
+## _Warning_: Like the [Tables package](https://github.com/protonemedia/inertiajs-tables-laravel-query-builder/issues/122), I've decided to archive this repository as I've moved away from Inertia.js to focus on [Splade](https://splade.dev) and [Eddy](https://eddy.management) 🔥
+
 # Inertia Vue Modal POC
 
 I've copied the default [Laravel Jetstream](https://jetstream.laravel.com/2.x/stacks/inertia.html) modal component for this demo.
