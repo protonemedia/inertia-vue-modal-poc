@@ -1,4 +1,4 @@
-## _Warning_: Like the [Tables package](https://github.com/protonemedia/inertiajs-tables-laravel-query-builder/issues/122), I've decided to archive this repository as I've moved away from Inertia.js to focus on [Splade](https://splade.dev) and [Eddy](https://eddy.management) 🔥
+# This package is not maintained anymore, but it has a successor: [Inertia Modal](https://inertiaui.com/inertia-modal/docs/introduction?utm_source=github&utm_campaign=inertia-vue-modal-poc) 🚀 
 
 # Inertia Vue Modal POC
 
